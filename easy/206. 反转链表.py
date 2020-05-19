@@ -16,6 +16,8 @@ def reverseList(head: ListNode) -> ListNode:
     return pre
     """
     """递归"""
+    if head is None:
+        return None
     if head.next is None:
         return head
     last = reverseList(head.next)
