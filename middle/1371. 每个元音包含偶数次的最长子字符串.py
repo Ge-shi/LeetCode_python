@@ -18,4 +18,9 @@ def findTheLongestSubstring(s: str) -> int:
             ans = max(ans, i + 1 - pos[status])
         else:
             pos[status] = i + 1
+        print(ans)
     return ans
+
+
+s = "eleetminicoworoep"
+print(findTheLongestSubstring(s))
