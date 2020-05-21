@@ -24,5 +24,29 @@ def longestPalindrome(s: str) -> str:
     return s[start:ans+start]
 
 
+def longestPalindrome2(s: str) -> str:
+    size = len(s)
+    if size < 2:
+        return s
+    res = s[0]
+    max_len = 1
+    for i in range(size):
+        odd_str, odd_len = __centerSpread(s, size, i, i)
+        even_str, even_len = __centerSpread(s, size, i, i + 1)
+        cur_maxstr = odd_str if odd_len > even_len else even_str
+        if len(cur_maxstr) > max_len:
+            res = cur_maxstr
+            max_len = len(cur_maxstr)
+    return res 
+
+
+def __centerSpread(s, size, left, right):
+    i = left
+    j = right
+    while j <= size - 1 and i >=0 and s[i] == s[j]:
+        i -= 1
+        j += 1
+    return s[i + 1:j], j - 1 - i
+
 s = "abcdcbabcd"
-print(longestPalindrome(s))
+print(longestPalindrome2(s))
