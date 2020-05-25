@@ -30,4 +30,4 @@ def recur(root: TreeNode):
     right = recur(root.right)
     if right == -1:
         return -1
-    return max(left, right) + 1 if abs(left - right) < 2 else -1
+    return max(left, right) + 1 if abs(left - right) < 2 else -1    
