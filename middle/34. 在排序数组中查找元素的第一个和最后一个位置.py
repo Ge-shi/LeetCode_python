@@ -1,4 +1,5 @@
 def searchRange(nums: list, target: int) -> list:
+
     def binary_search(nums: list, target: int):
         length = len(nums)
         left, right = 0, length - 1
@@ -37,7 +38,7 @@ def searchRange(nums: list, target: int) -> list:
         while right >= left:
             middle = left + (right - left) // 2
             if nums[middle] == target:
-                left = middle + 1
+                left = middle + 1   
             elif nums[middle] > target:
                 right = middle - 1
             elif nums[middle] < target:
